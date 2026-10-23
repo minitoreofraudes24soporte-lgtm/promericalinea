@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Inspiração em moda infantil: vestidos, conjuntos, roupas para meninos, meninas e bebês.">
+<title>Moda Infantil | Coleções e Inspirações</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --rose: #b57d7d;
+  --rose-dark: #966263;
+  --cream: #faf6f1;
+  --sand: #efe6dd;
+  --text: #514845;
+  --muted: #827974;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+  color: var(--text);
+}
+a { text-decoration: none; }
+img { max-width: 100%; }
+h1, h2, h3, .serif {
+  font-family: 'Playfair Display', serif;
+}
+.topbar {
+  background: #ae7d7d;
+  color: #fff;
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+  letter-spacing: .5px;
+}
+.navbar {
+  background: white;
+  padding: 18px 0;
+  box-shadow: 0 2px 15px rgba(0,0,0,.04);
+}
+.brand {
+  color: var(--rose-dark);
+  font-family: 'Playfair Display', serif;
+  font-size: 35px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.brand small {
+  display: block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-align: center;
+  font-weight: 500;
+}
+.nav-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0 8px;
+}
+.nav-link:hover { color: var(--rose); }
+.btn-rose {
+  display: inline-block;
+  border: 1px solid var(--rose);
+  background: var(--rose);
+  color: white;
+  padding: 13px 27px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  transition: .3s;
+}
+.btn-rose:hover {
+  background: var(--rose-dark);
+  color: white;
+  border-color: var(--rose-dark);
+}
+.btn-outline-rose {
+  display: inline-block;
+  padding: 12px 26px;
+  border: 1px solid var(--rose);
+  color: var(--rose-dark);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.btn-outline-rose:hover {
+  background: var(--rose);
+  color: white;
+}
+.hero {
+  background: var(--cream);
+  overflow: hidden;
+}
+.hero-copy {
+  padding: 85px 7%;
+}
+.eyebrow {
+  color: var(--rose);
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+.hero h1 {
+  font-size: clamp(40px, 5vw, 68px);
+  line-height: 1.15;
+  margin: 20px 0;
+}
+.hero p {
+  font-size: 15px;
+  line-height: 1.9;
+  color: var(--muted);
+  max-width: 520px;
+}
+.hero-img {
+  width: 100%;
+  height: 610px;
+  object-fit: cover;
+}
+.section {
+  padding: 85px 0;
+}
+.section-title {
+  text-align: center;
+  margin: 0 auto 45px;
+  max-width: 650px;
+}
+.section-title h2 {
+  font-size: clamp(30px, 4vw, 44px);
+  margin: 15px 0;
+}
+.section-title p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.benefits {
+  padding: 25px 0;
+  background: #f7f1ec;
+}
+.benefit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 13px;
+  padding: 12px;
+}
+.benefit i {
+  color: var(--rose);
+  font-size: 27px;
+}
+.benefit strong {
+  display: block;
+  font-size: 12px;
+}
+.benefit span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+}
+.category {
+  display: block;
+  position: relative;
+  overflow: hidden;
+  background: var(--sand);
+}
+.category img {
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  transition: transform .5s;
+}
+.category:hover img { transform: scale(1.05); }
+.category::after {
+  content: "";
+  position: absolute;
+  inset: 40% 0 0;
+  background: linear-gradient(transparent,rgba(38,25,25,.65));
+}
+.category-text {
+  position: absolute;
+  z-index: 1;
+  bottom: 25px;
+  left: 25px;
+  color: white;
+}
+.category-text h3 {
+  font-size: 30px;
+  margin-bottom: 7px;
+}
+.category-text span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+.product {
+  border: 1px solid #f0e9e5;
+  height: 100%;
+  transition: .25s;
+  background: white;
+}
+.product:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.06);
+}
+.product img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  background: var(--cream);
+}
+.product-body { padding: 22px; }
+.product-body h3 { font-size: 22px; }
+.product-body p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.product-body a {
+  font-size: 12px;
+  color: var(--rose-dark);
+  font-weight: 700;
+}
+.soft-section { background: var(--cream); }
+.editorial-img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+.editorial-copy { padding: 40px 8%; }
+.editorial-copy h2 {
+  font-size: clamp(32px,4vw,49px);
+  margin: 18px 0;
+}
+.editorial-copy p {
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: 14px;
+}
+.banner {
+  background:
+    linear-gradient(90deg,rgba(65,44,45,.75),rgba(65,44,45,.18)),
+    url('https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=1800&q=85')
+    center/cover no-repeat;
+  color: white;
+  padding: 100px 0;
+}
+.banner h2 {
+  font-size: clamp(35px,4vw,55px);
+  max-width: 650px;
+  margin: 20px 0;
+}
+.banner p {
+  max-width: 500px;
+  line-height: 1.8;
+}
+.info-icon {
+  width: 58px;
+  height: 58px;
+  background: #f8eeee;
+  color: var(--rose);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 25px;
+  margin-bottom: 18px;
+}
+.info-card h3 { font-size: 23px; }
+.info-card p {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+}
+.cta {
+  background: #ad7c7d;
+  color: white;
+  text-align: center;
+  padding: 75px 0;
+}
+.cta h2 { font-size: clamp(30px,4vw,45px); }
+.cta p {
+  max-width: 620px;
+  margin: 18px auto 25px;
+  line-height: 1.8;
+}
+.cta .btn-rose {
+  background: white;
+  color: var(--rose-dark);
+  border-color: white;
+}
+.footer {
+  background: #493d3d;
+  color: #f8f1ef;
+  padding: 55px 0 22px;
+}
+.footer .brand { color: white; }
+.footer h4 {
+  font-size: 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.footer p,.footer a {
+  font-size: 12px;
+  line-height: 2;
+  color: #e0d5d2;
+}
+.footer a:hover { color: white; }
+.footer-bottom {
+  border-top: 1px solid #6a5c5c;
+  padding-top: 20px;
+  margin-top: 35px;
+  font-size: 11px;
+  color: #d5c9c7;
+}
+@media(max-width:767px) {
+  .hero-copy { padding: 65px 25px; }
+  .hero-img { height: 340px; }
+  .section { padding: 60px 0; }
+  .category img { height: 300px; }
+  .product img { height: 220px; }
+  .editorial-img { height: 310px; }
+  .editorial-copy { padding: 40px 25px; }
+  .banner { padding: 70px 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  INSPIRAÇÃO EM MODA INFANTIL PARA MOMENTOS ESPECIAIS
+</div>
+
+<!-- MENU -->
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="#inicio">
+      milon
+      <small>MODA INFANTIL</small>
+    </a>
+
+    <button class="navbar-toggler" type="button"
+      data-bs-toggle="collapse" data-bs-target="#menu"
+      aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menu">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+        <li class="nav-item"><a class="nav-link" href="#categorias">Categorias</a></li>
+        <li class="nav-item"><a class="nav-link" href="#colecao">Coleções</a></li>
+        <li class="nav-item"><a class="nav-link" href="#sobre">Sobre</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contato">Contato</a></li>
+      </ul>
+
+      <a href="https://loja.milon.com.br/"
+        target="_blank" rel="noopener"
+        class="btn-rose">
+        Visitar loja
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- BANNER PRINCIPAL -->
+<section class="hero" id="inicio">
+  <div class="container-fluid p-0">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6">
+        <div class="hero-copy">
+          <span class="eyebrow">Delicadeza em cada detalhe</span>
+          <h1>A infância merece ser vivida com encanto.</h1>
+          <p>
+            Descubra inspirações em roupas infantis que combinam
+            conforto, elegância e liberdade para acompanhar os
+            pequenos em cada nova descoberta.
+          </p>
+          <div class="d-flex gap-3 flex-wrap mt-4">
+            <a href="#categorias" class="btn-rose">
+              Explorar categorias
+            </a>
+            <a href="#colecao" class="btn-outline-rose">
+              Ver coleções
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <img class="hero-img"
+          src="https://images.unsplash.com/photo-1519457431-44ccd64a579b?auto=format&fit=crop&w=1200&q=85"
+          alt="Inspiração para a infância e moda infantil">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BENEFÍCIOS -->
+<section class="benefits">
+  <div class="container">
+    <div class="row g-3">
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-heart"></i>
+          <div>
+            <strong>Delicadeza e estilo</strong>
+            <span>Inspiração para cada ocasião</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-stars"></i>
+          <div>
+            <strong>Looks encantadores</strong>
+            <span>Detalhes que fazem diferença</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="benefit">
+          <i class="bi bi-balloon-heart"></i>
+          <div>
+            <strong>Infância com conforto</strong>
+            <span>Para acompanhar as descobertas</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CATEGORIAS -->
+<section class="section" id="categorias">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Escolha seu universo</span>
+      <h2>Moda para cada fase da infância</h2>
+      <p>
+        Explore opções para meninas, meninos e bebês,
+        com inspiração em looks delicados e confortáveis.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <a class="category"
+          href="https://loja.milon.com.br/infantil/meninas"
+          target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=850&q=85"
+            alt="Moda infantil para meninas" loading="lazy">
+          <div class="category-text">
+            <h3>Meninas</h3>
+            <span>Explorar coleção <i class="bi bi-arrow-up-right"></i></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a class="category"
+          href="https://loja.milon.com.br/"
+          target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=850&q=85"
+            alt="Moda infantil para meninos" loading="lazy">
+          <div class="category-text">
+            <h3>Meninos</h3>
+            <span>Explorar coleção <i class="bi bi-arrow-up-right"></i></span>
+          </div>
+        </a>
+      </div>
+
+      <div class="col-md-4">
+        <a class="category"
+          href="https://loja.milon.com.br/bebe"
+          target="_blank" rel="noopener">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=850&q=85"
+            alt="Inspiração em roupas para bebês" loading="lazy">
+          <div class="category-text">
+            <h3>Bebês</h3>
+            <span>Explorar coleção <i class="bi bi-arrow-up-right"></i></span>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EDITORIAL -->
+<section class="soft-section" id="colecao">
+  <div class="container-fluid p-0">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6">
+        <img class="editorial-img"
+          src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&w=1200&q=85"
+          alt="Momentos especiais da infância"
+          loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <div class="editorial-copy">
+          <span class="eyebrow">Pequenos grandes momentos</span>
+          <h2>Looks para guardar na memória.</h2>
+          <p>
+            Uma roupa especial pode fazer parte de momentos
+            inesquecíveis: aniversários, passeios em família,
+            comemorações e descobertas do dia a dia.
+          </p>
+          <p>
+            Inspire-se em vestidos, conjuntos, camisas,
+            macacões e peças que unem beleza e praticidade.
+          </p>
+          <a href="https://loja.milon.com.br/"
+            target="_blank" rel="noopener"
+            class="btn-rose mt-2">
+            Conhecer coleções
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- VITRINE -->
+<section class="section">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Inspire-se</span>
+      <h2>Peças para diferentes momentos</h2>
+      <p>
+        Conheça algumas das principais categorias de moda
+        infantil presentes no universo Milon.
+      </p>
+    </div>
+
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1519238263530-99bdd11df2ea?auto=format&fit=crop&w=700&q=80"
+            alt="Inspiração para vestidos infantis"
+            loading="lazy">
+          <div class="product-body">
+            <h3>Vestidos infantis</h3>
+            <p>
+              Inspirações delicadas para passeios,
+              celebrações e momentos especiais.
+            </p>
+            <a href="https://loja.milon.com.br/infantil/meninas/vestidos-de-verao"
+              target="_blank" rel="noopener">
+              Conhecer opções <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1503919005314-30d93d07d823?auto=format&fit=crop&w=700&q=80"
+            alt="Moda infantil casual"
+            loading="lazy">
+          <div class="product-body">
+            <h3>Conjuntos infantis</h3>
+            <p>
+              Praticidade para montar combinações
+              confortáveis e cheias de personalidade.
+            </p>
+            <a href="https://loja.milon.com.br/"
+              target="_blank" rel="noopener">
+              Conhecer opções <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4?auto=format&fit=crop&w=700&q=80"
+            alt="Inspiração para moda bebê"
+            loading="lazy">
+          <div class="product-body">
+            <h3>Moda bebê</h3>
+            <p>
+              Bodies, macacões e conjuntos para
+              acompanhar os primeiros meses.
+            </p>
+            <a href="https://loja.milon.com.br/bebe"
+              target="_blank" rel="noopener">
+              Conhecer opções <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-sm-6 col-lg-3">
+        <div class="product">
+          <img src="https://images.unsplash.com/photo-1471286174890-9c112ffca5b4?auto=format&fit=crop&w=700&q=80"
+            alt="Moda infantil para ocasiões especiais"
+            loading="lazy">
+          <div class="product-body">
+            <h3>Ocasiões especiais</h3>
+            <p>
+              Referências para compor looks
+              elegantes e cheios de charme.
+            </p>
+            <a href="https://loja.milon.com.br/"
+              target="_blank" rel="noopener">
+              Conhecer opções <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BANNER -->
+<section class="banner">
+  <div class="container">
+    <span class="eyebrow" style="color:#f5dedc">
+      Celebre a infância
+    </span>
+    <h2>Cada descoberta merece um toque de carinho.</h2>
+    <p>
+      Inspire-se em coleções que acompanham os pequenos
+      com leveza, delicadeza e liberdade para brincar.
+    </p>
+    <a href="https://loja.milon.com.br/"
+      target="_blank" rel="noopener"
+      class="btn-rose mt-3">
+      Visitar loja original
+    </a>
+  </div>
+</section>
+
+<!-- SOBRE -->
+<section class="section" id="sobre">
+  <div class="container">
+    <div class="section-title">
+      <span class="eyebrow">Nosso conceito</span>
+      <h2>Moda que acompanha a infância</h2>
+      <p>
+        Uma apresentação visual inspirada no universo
+        da moda infantil, com foco em delicadeza,
+        conforto e experiências especiais.
+      </p>
+    </div>
+
+    <div class="row g-5">
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="bi bi-heart"></i>
+          </div>
+          <h3>Delicadeza</h3>
+          <p>
+            Cores suaves, detalhes encantadores e
+            referências para compor looks infantis.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="bi bi-flower1"></i>
+          </div>
+          <h3>Conforto</h3>
+          <p>
+            Ideias de peças que valorizam a
+            liberdade de movimento e o bem-estar.
+          </p>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="info-card">
+          <div class="info-icon">
+            <i class="bi bi-stars"></i>
+          </div>
+          <h3>Estilo</h3>
+          <p>
+            Inspiração para diferentes momentos,
+            desde o cotidiano até ocasiões especiais.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contato">
+  <div class="container">
+    <h2>Descubra mais sobre a moda infantil Milon</h2>
+    <p>
+      Para consultar produtos, tamanhos, preços,
+      disponibilidade, entregas e condições de compra,
+      acesse diretamente a loja oficial.
+    </p>
+    <a href="https://loja.milon.com.br/"
+      target="_blank" rel="noopener"
+      class="btn-rose">
+      Acessar loja oficial
+      <i class="bi bi-arrow-up-right"></i>
+    </a>
+  </div>
+</section>
+
+<!-- RODAPÉ -->
+<footer class="footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-5">
+        <div class="brand mb-3">
+          milon
+          <small>MODA INFANTIL</small>
+        </div>
+        <p>
+          Página demonstrativa de inspiração em moda
+          infantil. Não é o site oficial da marca e
+          não realiza vendas ou pagamentos.
+        </p>
+      </div>
+
+      <div class="col-6 col-md-3">
+        <h4>Navegação</h4>
+        <p><a href="#inicio">Início</a></p>
+        <p><a href="#categorias">Categorias</a></p>
+        <p><a href="#colecao">Coleções</a></p>
+        <p><a href="#sobre">Sobre</a></p>
+      </div>
+
+      <div class="col-6 col-md-4">
+        <h4>Loja original</h4>
+        <p>
+          Consulte informações e realize compras
+          somente no domínio oficial.
+        </p>
+        <p>
+          <a href="https://loja.milon.com.br/"
+            target="_blank" rel="noopener">
+            loja.milon.com.br
+            <i class="bi bi-box-arrow-up-right"></i>
+          </a>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between gap-2">
+      <span>© 2026 — Modelo demonstrativo independente.</span>
+      <span>Imagens ilustrativas. Sem vínculo oficial com a marca.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
